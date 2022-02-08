@@ -5,7 +5,7 @@
 #### What is The Purpose of Your Research Project?
 The purpose of this project is to find the correlation between the different COVID-19 variants and its impact on the population. To do this we will be looking at a variety of metrics from deaths to case number and even trying to find impact to the hospital systems. With the largest scope of the project looking at variant data, to narrow that focus we will be focusing more so on the variants of Delta and Omicron with the spikes of those two variants impacting the general population.
 
-#### What other research has been done in this area? Make sure to include **3+ links** to related works, as well as a summary of what work was discovered.
+#### What other research has been done in this area?
 1. [Omicron vs Delta](https://www.kaggle.com/francescovattiato/omicron-vs-delta)
 This is a python notebook comparing Omicron and Delta, especially when it comes to how quickly each strain becomes dominant, the spread across time, and more. From the data, it looks like Omicron is becoming the dominant strain across different countries in a similar way to delta when it was first introduced.
 
