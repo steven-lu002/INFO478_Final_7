@@ -11,13 +11,17 @@ omicrondata <- coviddata %>%
 deltadata <- coviddata %>%
   filter(variant == "B.1.617.2", source == "GISAID")
 
-#total new cases table and graph 
+# 
+
+# Relationships between variables
+# Total new cases table and graph 
 total_cases <- omicrondata %>%
   group_by(country_code) %>%
   summarize(totalcases = sum(new_cases)) %>%
   arrange(desc(totalcases))
 
-total_cases_plot <- ggplot(omicron_cases, aes(x = reorder(country_code, - totalcases), y=totalcases)) +
+# Total new cases plot
+total_cases_plot <- ggplot(total_cases, aes(x = reorder(country_code, - totalcases), y=totalcases)) +
   geom_bar(stat="identity") +
   labs(y = "Total New Cases", x = "Country Code", title = "Total Number of New Cases Vs. Country Code")
 
