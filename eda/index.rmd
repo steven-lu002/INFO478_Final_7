@@ -1,0 +1,26 @@
+---
+title: "Exploratory Analysis"
+author: "Adam Nicewarner, Licsun Wong, Jeffery Nguyen & Steven Lu"
+date: "`r Sys.Date()`"
+output: openintro::lab_report
+---
+
+```{r load-packages, warning=FALSE,message=FALSE}
+source("../analysis.R")
+
+```
+
+### Distribution of Variables
+
+
+
+```{r warning=FALSE,message=FALSE}
+
+```
+
+### Relationship between Variables
+
+
+
+...
+

@@ -1,7 +1,7 @@
 library(tidyverse)
 
 # initial data set
-coviddata <- read.csv("./data/europedata.csv")
+coviddata <- read.csv("data/europedata.csv")
 
 # filtered csv file down to omicron (B.1.1.529) and source to GISAID
 omicrondata <- coviddata %>%
