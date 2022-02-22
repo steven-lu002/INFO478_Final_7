@@ -11,7 +11,25 @@ omicrondata <- coviddata %>%
 deltadata <- coviddata %>%
   filter(variant == "B.1.617.2", source == "GISAID")
 
-# 
+# Distribution of Variables
+
+# Analysis of data omicron/delta (max and min)
+
+omicron_analysis <- omicrondata %>%
+  summarise(max_omicron_detected = max(number_detections_variant), 
+            min_omicron_detected = min(number_detections_variant),
+            range_omicron_detected = max_omicron_detected - min_omicron_detected,
+            standard_deviation = sd(number_detections_variant),
+            avg_detections_omicron = mean(number_detections_variant))
+
+delta_analysis <- deltadata %>%
+  summarise(max_delta_detected = max(number_detections_variant), 
+            min_delta_detected = min(number_detections_variant),
+            range_delta_detected = max_delta_detected - min_delta_detected, 
+            standard_deviation = sd(number_detections_variant), 
+            avg_detections_delta = mean(number_detections_variant))
+
+
 
 # Relationships between variables
 # Total new cases table and graph 
