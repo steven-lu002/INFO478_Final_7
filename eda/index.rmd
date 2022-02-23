@@ -24,7 +24,7 @@ source("analysis.R")
 total_cases_plot
 FR_omicron_cases_plot
 ```
-
+If we consider the French percentage of omicron, we can immediately see a trend. These two continuous variables, when put together show a strong positive exponential correlation, with the percentage ramping up from December 2021 to the start of January 2022. This makes sense when we consider the variables in the graph, infection rates pick up once they have a high enough rate that most vulnerable people will be affected, and herd immunity is less powerful. However, once they have infected most of the population, the people who previously had COVID or a non-omicron variant will have resistance to COVID, and the infection rate will slow.
 
 
 ...
