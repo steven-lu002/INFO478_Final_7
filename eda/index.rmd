@@ -12,13 +12,18 @@ source("analysis.R")
 
 ### Distribution of Variables
 
-
-
-```{r warning=FALSE,message=FALSE}
+```{r}
 
 ```
 
+
+
 ### Relationship between Variables
+
+```{r warning=FALSE,message=FALSE}
+total_cases_plot
+FR_omicron_cases_plot
+```
 
 
 
