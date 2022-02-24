@@ -13,10 +13,10 @@ source("analysis.R")
 ### Distribution of Variables
 
 ```{r}
-
+kable(data_analysis)
+data_analysis_graph
 ```
-
-
+Looking at the data and the relationship between these three specific variants, Other classifies as the first variant discovered in the world. Looking at Omicron, Delta, and the first covid strain we can discover many unique ideas. First as of the 4th week of January 2022, delta still has the most cases that has impacted Europe. Looking at the standard deviation we can see that delta has the highest standard deviation, meaning that the data points are very scattered from the median. This show the discrepancy in the data over time with delta as it pertains to its peak relative to the average during the last two years. When looking at the average from the table we can also see that Omicron and Other have similar averages. 
 
 ### Relationship between Variables
 

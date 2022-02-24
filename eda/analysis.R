@@ -1,4 +1,5 @@
 library(tidyverse)
+library(knitr)
 
 # initial data set
 coviddata <- read.csv("data/europedata.csv")
@@ -11,6 +12,11 @@ omicrondata <- coviddata %>%
 deltadata <- coviddata %>%
   filter(variant == "B.1.617.2", source == "GISAID")
 
+# filtered csv file down to variant Other and source to GISAID
+
+otherdata <- coviddata %>%
+  filter(variant == "Other", source == "GISAID")
+
 # Distribution of Variables
 
 # Analysis of data omicron/delta (max and min)
@@ -20,16 +26,31 @@ omicron_analysis <- omicrondata %>%
             min_detected = min(number_detections_variant),
             range_detected = max_detected - min_detected,
             standard_deviation = sd(number_detections_variant),
-            avg_detections_omicron = mean(number_detections_variant))
+            avg_detections = mean(number_detections_variant)) %>%
+  mutate(variant = "Omicron")
 
 delta_analysis <- deltadata %>%
   summarise(max_detected = max(number_detections_variant), 
             min_detected = min(number_detections_variant),
             range_detected = max_detected - min_detected, 
             standard_deviation = sd(number_detections_variant), 
-            avg_detections_delta = mean(number_detections_variant))
+            avg_detections = mean(number_detections_variant)) %>%
+  mutate(variant = "Delta")
 
+other_analysis <- otherdata %>% 
+  summarise(max_detected = max(number_detections_variant), 
+            min_detected = min(number_detections_variant),
+            range_detected = max_detected - min_detected, 
+            standard_deviation = sd(number_detections_variant), 
+            avg_detections = mean(number_detections_variant))%>%
+  mutate(variant = "Other")
 
+data_analysis <- do.call("rbind", list(omicron_analysis, delta_analysis, other_analysis)) %>%
+  select(variant, !variant)
+
+data_analysis_graph <- ggplot(data = data_analysis, aes(x = variant, y = standard_deviation)) +
+  geom_col() +
+  labs(title = "Standard deviation amongst variants", x = "Variant", y = "Standard Deviation")
 
 # Relationships between variables
 # Total new cases table and graph 
