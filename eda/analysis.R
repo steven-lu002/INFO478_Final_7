@@ -50,7 +50,7 @@ data_analysis <- do.call("rbind", list(omicron_analysis, delta_analysis, other_a
 
 data_analysis_graph <- ggplot(data = data_analysis, aes(x = variant, y = standard_deviation)) +
   geom_col() +
-  labs(title = "Standard deviation amongst variants", x = "Variant", y = "Standard Deviation")
+  labs(title = "Standard Deviation Amongst Variants by Number of Variants Detected", x = "Variant", y = "Standard Deviation")
 
 # Relationships between variables
 # Total new cases table and graph 
@@ -62,7 +62,7 @@ total_cases <- omicrondata %>%
 # Total new cases plot
 total_cases_plot <- ggplot(total_cases, aes(x = reorder(country_code, - totalcases), y=totalcases)) +
   geom_bar(stat="identity") +
-  labs(y = "Total New Cases", x = "Country Code", title = "Total Number of New Cases Vs. Country Code")
+  labs(y = "Total New Cases", x = "Country Code", title = "Total Number of Cases by Country")
 
 # French omicron data
 FR_omicron_cases <- omicrondata %>%
@@ -73,4 +73,4 @@ FR_omicron_cases <- omicrondata %>%
 FR_omicron_cases_plot <- ggplot(data = FR_omicron_cases, aes(x = year_week, y = percent_variant)) +
   geom_point(shape = 1) +
   labs(x = "Year Week", y = "Percentage of Omicron Variant", 
-       title = "French Percentage of Omicron Variant vs Year Week")
+       title = "Percentage of Omicron Variant in France vs by Week")

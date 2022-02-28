@@ -14,8 +14,14 @@ source("analysis.R")
 
 ```{r}
 kable(data_analysis)
+```
+
+This is a table of the statistical testing we did, we found the means, standard deviations, ranges, and mins and max of number of variants detected. With this we can see the how the number of covid variants has changed with time elapsed through the max number of variants detected and the average number of variants detected. The standard deviation allows us to see how dispersed the number of detections per variant in relation to the mean number of detections for each covid variant. A larger standard deviation means that the number of detections are extremely spread out meaning that there is high variance with less certainty. 
+
+```{r}
 data_analysis_graph
 ```
+
 Looking at the data and the relationship between these three specific variants, Other classifies as the first variant discovered in the world. Looking at Omicron, Delta, and the first covid strain we can discover many unique ideas. First as of the 4th week of January 2022, delta still has the most cases that has impacted Europe. Looking at the standard deviation we can see that delta has the highest standard deviation, meaning that the data points are very scattered from the median. This show the discrepancy in the data over time with delta as it pertains to its peak relative to the average during the last two years. When looking at the average from the table we can also see that Omicron and Other have similar averages. 
 
 ### Relationship between Variables
@@ -24,8 +30,6 @@ Looking at the data and the relationship between these three specific variants, 
 total_cases_plot
 FR_omicron_cases_plot
 ```
-If we consider the French percentage of omicron, we can immediately see a trend. These two continuous variables, when put together show a strong positive exponential correlation, with the percentage ramping up from December 2021 to the start of January 2022. This makes sense when we consider the variables in the graph, infection rates pick up once they have a high enough rate that most vulnerable people will be affected, and herd immunity is less powerful. However, once they have infected most of the population, the people who previously had COVID or a non-omicron variant will have resistance to COVID, and the infection rate will slow.
 
-
-...
+If we consider the percentage of omicron in France, we can immediately see a trend. These two continuous variables, when put together show a strong positive exponential correlation, with the percentage ramping up from December 2021 to the start of January 2022. This makes sense when we consider the variables in the graph, infection rates pick up once they have a high enough rate that most vulnerable people will be affected, and herd immunity is less powerful. However, once they have infected most of the population, the people who previously had COVID or a non-omicron variant will have resistance to COVID, and the infection rate will slow.
 
