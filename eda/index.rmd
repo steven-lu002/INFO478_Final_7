@@ -10,6 +10,24 @@ source("analysis.R")
 
 ```
 
+### Information About our Dataset and Sources
+
+Our dataset was taken from the European center for disease prevention and control (ECDC) which aggregated SARS-CoV-2 data from the GISAID EpiCoV database and TESSy sources. In the data provided, with the columns country, country code, year week, source, new cases, number sequenced, percent case sequenced, valid denominator, variant, number detection variant, number sequenced known variant, and percent variant. This data was aggregated beginning in September 28, 2020 (2020-40 (Week 40 of 2020)) and has been continually updated every week with the most recent being January 30, 2022 (2022-4 (Week 4 of 2022)). Test cases are sequenced from individuals who test positive for Covid-19 and are sent to GISAID as a global initiative to share genome information on influenza.
+
+Explanation of variables - \
+Country - Name of country \
+Country Code - Country code for the country \
+Year Week - The Year and the Week the data was collected \
+Source - Where the data was aggregated from \
+New Cases - Number of new cases \
+Number Sequenced - Amount of cases sequenced in lab \
+Percent Case Sequenced - Percentage of sequenced cases compared to new cases \
+Valid denominator - No missing values \
+Variant - Covid variant sequence number \
+Number of Detections Variant - How many times a specific variant is detected in the sequence \
+Number of Sequenced Known Variant - How many sequences are variants that are known \
+Percent Variant - percentage of a specific variant divided by number of known variants sequenced. \
+
 ### Distribution of Variables
 
 ```{r}
