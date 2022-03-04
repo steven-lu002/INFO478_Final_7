@@ -13,21 +13,23 @@ library(shiny)
 shinyUI(fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
+    titlePanel("Covid Variants"),
 
-    # Sidebar with a slider input for number of bins
-    sidebarLayout(
-        sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
-        ),
 
-        # Show a plot of the generated distribution
-        mainPanel(
-            plotOutput("distPlot")
-        )
-    )
+    tabsetPanel(
+      tabPanel(
+        "Introduction",
+        titlePanel("Introduction")
+      ),
+      
+      tabPanel(
+        "Page 2",
+        titlePanel("Page 2")
+      ),
+      
+      tabPanel(
+        "Page 3",
+        titlePanel("Page 3")
+      )
+    ),
 ))
