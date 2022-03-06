@@ -1,4 +1,4 @@
-Country,country_code,Alpha-3code,Numericcode,Latitude,Longitude
+Country,country_code,Alpha-3code,Numericcode,latitude,longitude
 Afghanistan,AF,AFG,4,33,65
 Albania,AL,ALB,8,41,20
 Algeria,DZ,DZA,12,28,3
