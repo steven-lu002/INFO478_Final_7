@@ -11,7 +11,6 @@ test <- left_join(coviddata, countries, by='country_code')
 
 countries <- left_join(countries, population, by='code2')
 
-
 # summarize by new cases #omicron
 testmap <- test %>%
   filter(variant == "B.1.1.529", source == "GISAID") %>%

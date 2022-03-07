@@ -51,8 +51,8 @@ shinyUI(fluidPage(
       ),
       
       tabPanel(
-        "Page 3",
-        titlePanel("Page 3"),
+        "Covid Cases Map",
+        titlePanel("Map of Total Covid Cases Divided by Population"),
         mainPanel(
           leafletOutput("outleafmap")
         )
