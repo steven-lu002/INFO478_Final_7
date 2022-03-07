@@ -25,13 +25,14 @@ mapInfo <- left_join(testmap, countries, by='country_code') %>%
   select(Country, country_code, longitude, latitude, totalcases, population) %>%
   drop_na(longitude)
 
-m <-leaflet(mapInfo) %>%
+leafmap <-leaflet(mapInfo) %>%
   addTiles() %>%
   addCircleMarkers(
     radius = ~ (50 * totalcases / population),
     stroke = FALSE, fillOpacity = .5,
     label = paste(mapInfo$Country, "total cases: ", formatC(mapInfo$totalcases, format="d", big.mark=","))
   )
+
 
 
 

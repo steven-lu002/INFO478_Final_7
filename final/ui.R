@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(leaflet)
 
 test <- read.csv("data/europedata.csv")
 # Define UI for application that draws a histogram
@@ -51,7 +52,10 @@ shinyUI(fluidPage(
       
       tabPanel(
         "Page 3",
-        titlePanel("Page 3")
+        titlePanel("Page 3"),
+        mainPanel(
+          leafletOutput("outleafmap")
+        )
       )
     ),
 ))
