@@ -10,7 +10,6 @@ population <- read.csv("data/population.csv")
 test <- left_join(coviddata, countries, by='country_code')
 
 countries <- left_join(countries, population, by='code2')
-countries = merge(x=countries,y=population,by="code2",all.x=TRUE)
 
 
 # summarize by new cases #omicron
@@ -24,6 +23,7 @@ testmap <- test %>%
 mapInfo <- left_join(testmap, countries, by='country_code') %>%
   select(Country, country_code, longitude, latitude, totalcases, population) %>%
   drop_na(longitude)
+
 
 leafmap <-leaflet(mapInfo) %>%
   addTiles() %>%
