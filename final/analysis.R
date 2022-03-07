@@ -3,9 +3,15 @@ library(leaflet)
 
 coviddata <- read.csv("data/europedata.csv")
 countries <- read.csv("data/countries.csv")
+population <- read.csv("data/population.csv")
+
 
 # countries with coordinates
 test <- left_join(coviddata, countries, by='country_code')
+
+countries <- left_join(countries, population, by='code2')
+countries = merge(x=countries,y=population,by="code2",all.x=TRUE)
+
 
 # summarize by new cases #omicron
 testmap <- test %>%
@@ -16,12 +22,18 @@ testmap <- test %>%
 
 # table with country code, coordinates and total cases
 mapInfo <- left_join(testmap, countries, by='country_code') %>%
-  select(country_code, longitude, latitude, totalcases) %>%
+  select(Country, country_code, longitude, latitude, totalcases, population) %>%
   drop_na(longitude)
 
 m <-leaflet(mapInfo) %>%
   addTiles() %>%
   addCircleMarkers(
-    radius = ~ sqrt(totalcases * .00015),
-    stroke = FALSE, fillOpacity = .5
+    radius = ~ (50 * totalcases / population),
+    stroke = FALSE, fillOpacity = .5,
+    label = paste(mapInfo$Country, "total cases: ", formatC(mapInfo$totalcases, format="d", big.mark=","))
   )
+
+
+
+
+
