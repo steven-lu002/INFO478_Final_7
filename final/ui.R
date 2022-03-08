@@ -36,7 +36,6 @@ shinyUI(fluidPage(
            the country and country code, the week of the year, source, new cases, percent variant, number detection 
            variant, and a few more, listed in the exploratory. Every positive test case is reported to GISAID as a 
            global database to share genome information on influenza. "),
-        hr(),
         h4("Aside from the data collected from the European Center for Disease Prevention and Control, we 
            also organized the longitude and latitude of European countries from a Github repository that 
            featured country names, alpha code, and average longitude and latitude. Also, another Github 
@@ -76,20 +75,8 @@ shinyUI(fluidPage(
           ),
           mainPanel(
             plotOutput("vis1")
-          )
-        )
-      ),
-      
-      tabPanel(
-        "Covid Cases Map",
-        titlePanel("Map of Total Covid Cases Divided by Population"),
-        mainPanel(
-          leafletOutput("outleafmap")
-        )
-      ),
-      tabPanel(
-        "Analysis and Conclusion",
-        titlePanel("Analysis and Conclusion"),
+          ),
+        ),
         h2("Line Graph"),
         h4("When looking at the line graph, we can see the spreadability of each covid variant of interest. 
            Such allows us to see each variant's overall evolution and effectiveness in a given period. For 
@@ -103,6 +90,14 @@ shinyUI(fluidPage(
            the highest reproductive rate at the given time. We won't be able to decide on the actual reproductive 
            rate. Still, we will be able to know at a certain point in time which variant had the highest reproductive 
            rate, and this will also show why the variant should be invariants of concern or variants of interest."),
+      ),
+      
+      tabPanel(
+        "Covid Cases Map",
+        titlePanel("Map of Total Covid Cases Divided by Population"),
+        mainPanel(
+          leafletOutput("outleafmap")
+        ),
         h2("Map"),
         h4("Looking at the map of Covid cases by population, many different countries have experienced similar 
            amounts of total Covid cases divided by population. However, a few countries like Finland and Malta 
@@ -116,7 +111,10 @@ shinyUI(fluidPage(
            booster shot, while Finland is sitting at 50%. This difference is shown by the percentage of individuals 
            with at least one vaccine, where Slovenia is at 60%, and Finland is at 80%. As of January 30th, 2022, 
            Slovenia's total cases are 705618, roughly 1/3 of their total population. "),
-        h2("Conclusion"),
+      ),
+      tabPanel(
+        "Conclusion",
+        titlePanel("Conclusion"),
         h4("However, there were also a few limitations to our approach. Due to the way we acquired our data, we 
            depend heavily on countries to report accurate numbers of covid cases and cases sequenced. This means 
            that we are heavily relying on these countries, which often have incentives to downplay the level of 
